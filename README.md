@@ -22,17 +22,14 @@ A Python-based tool for monitoring and tracking seat availability changes for AM
 
 ## Installation
 
-1. Ensure you have Poetry installed:
+1. Ensure you have [Python](https://www.python.org/downloads/) and [Poetry installed](https://python-poetry.org/docs/#installation):
 
-```bash
-curl -sSL https://install.python-poetry.org | python3 -
-```
 
 2. Clone the repository:
 
 ```bash
-git clone https://github.com/yourusername/amc-seat-monitor.git
-cd amc-seat-monitor
+git clone https://github.com/jykim256/seat-monitor.git
+cd seat-monitor
 ```
 
 3. Install dependencies with Poetry:
