@@ -24,7 +24,6 @@ A Python-based tool for monitoring and tracking seat availability changes for AM
 
 1. Ensure you have [Python](https://www.python.org/downloads/) and [Poetry installed](https://python-poetry.org/docs/#installation):
 
-
 2. Clone the repository:
 
 ```bash
@@ -45,13 +44,13 @@ poetry install
 Run the monitor with a specific showtime ID:
 
 ```bash
-poetry run seat-monitor <showtime_id>
+poetry run python src/seat_monitor/main.py <showtime_id>
 ```
 
 Example:
 
 ```bash
-poetry run seat-monitor 12345678
+poetry run python src/seat_monitor/main.py 12345678
 ```
 
 ### Advanced Usage
@@ -59,13 +58,13 @@ poetry run seat-monitor 12345678
 Run with a log file to save the change history:
 
 ```bash
-poetry run seat-monitor <showtime_id> <log_file_path>
+poetry run python src/seat_monitor/main.py <showtime_id> <log_file_path>
 ```
 
 Example:
 
 ```bash
-poetry run seat-monitor 12345678 seat_changes.json
+poetry run python src/seat_monitor/main.py 12345678 seat_changes.json
 ```
 
 You can also run the script directly in Poetry's shell:
