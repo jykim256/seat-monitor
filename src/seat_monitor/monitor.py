@@ -1,8 +1,4 @@
 # src/seat_monitor/monitor.py
-from selenium import webdriver
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.chrome.options import Options
 from datetime import datetime
 import time
@@ -11,10 +7,10 @@ import os
 import webbrowser
 from typing import Set, Dict, List
 
-from .utils.web_utils import get_available_seats
-from .utils.notifications import notify_mac
-from .utils.seat_formatter import format_seats_by_row
-from .templates.report_template import generate_html_report
+from utils.web_utils import get_available_seats
+from utils.notifications import notify_mac
+from utils.seat_formatter import format_seats_by_row
+from templates.report_template import generate_html_report
 
 
 class SeatMonitor:

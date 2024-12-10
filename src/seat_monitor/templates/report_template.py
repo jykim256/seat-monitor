@@ -1,6 +1,8 @@
 # src/seat_monitor/templates/report_template.py
 from datetime import datetime
 
+from utils.seat_formatter import format_seats_by_row
+
 
 def generate_html_report(monitor):
     """Generate HTML report with history table"""
@@ -137,33 +139,33 @@ def generate_html_report(monitor):
 
         if event["event"] == "initial":
             status = '<span class="status status-initial">Initial Check</span>'
-            seats = monitor.format_seats_by_row(set(event["available_seats"])).replace(
+            seats = format_seats_by_row(set(event["available_seats"])).replace(
                 "\n", "<br>"
             )
             changes = "Initial state"
         elif event["event"] == "change":
             status = '<span class="status status-change">Change Detected</span>'
-            seats = monitor.format_seats_by_row(set(event["available_seats"])).replace(
+            seats = format_seats_by_row(set(event["available_seats"])).replace(
                 "\n", "<br>"
             )
 
             changes = []
             if event.get("new_seats"):
-                formatted = monitor.format_seats_by_row(
-                    set(event["new_seats"])
-                ).replace("\n", "<br>")
+                formatted = format_seats_by_row(set(event["new_seats"])).replace(
+                    "\n", "<br>"
+                )
                 changes.append(f'<span class="badge badge-added">+ {formatted}</span>')
             if event.get("removed_seats"):
-                formatted = monitor.format_seats_by_row(
-                    set(event["removed_seats"])
-                ).replace("\n", "<br>")
+                formatted = format_seats_by_row(set(event["removed_seats"])).replace(
+                    "\n", "<br>"
+                )
                 changes.append(
                     f'<span class="badge badge-removed">- {formatted}</span>'
                 )
             changes = " ".join(changes) if changes else "No changes"
         else:  # regular check
             status = '<span class="status status-check">Regular Check</span>'
-            seats = monitor.format_seats_by_row(set(event["available_seats"])).replace(
+            seats = format_seats_by_row(set(event["available_seats"])).replace(
                 "\n", "<br>"
             )
             changes = "No changes"

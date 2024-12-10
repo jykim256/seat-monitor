@@ -1,6 +1,6 @@
 # src/seat_monitor/main.py
 import sys
-from .monitor import SeatMonitor
+from monitor import SeatMonitor
 
 
 def main():

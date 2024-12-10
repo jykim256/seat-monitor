@@ -4,7 +4,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from typing import Set
-from ..consts import ROW_CHARS, MAX_SEATS_PER_ROW
+from consts import ROW_CHARS, MAX_SEATS_PER_ROW
 
 
 def get_available_seats(showtime_id: str, chrome_options) -> Set[str]:
