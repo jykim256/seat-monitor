@@ -2,6 +2,8 @@
 
 A Python-based tool for monitoring and tracking seat availability changes for AMC theater showtimes. This tool helps you keep track of seat availability in real-time, with desktop notifications and a live updating web interface.
 
+![A screenshot showing the seat monitor](image.png)
+
 ## Features
 
 - 🎦 Real-time seat availability monitoring
